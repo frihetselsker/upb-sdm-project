@@ -4,35 +4,41 @@ The topic of my project is **Public Transportation Ticketing System**.
 
 ## Business Agents
 
-- Operator?
-- Driver?
-- Validator?
+- None
+
+> P.S. It appears that no human is involved in any business process in this case. User interacts only with the system.
 
 ## Business Actors
 
-- Passenger?
+- Passenger
 
 ## Business Activities
 
 - Buy tickets/travel cards
+- Create an account
+- Top-up travel cards
 - Plan journey
-- Manage travel needs
-- Find optimal routes
-- Get informed about transport system 
+- Search optimal routes
+- Receive travel notifications
+- Display arrival/departure information
 - Validate ticket
+- View real-time transport information
 
 ## Business Processes
 
-// What to write here?
+
 
 ## Business Rules
 
 | Code     | Rule    |
 | -------- | ------- |
-| BR1      | Passengers can purchase tickets for single journeys, daily passes, or monthly travelcards through self-service kiosks, mobile apps, or the official website. |
-| BR2      | Passengers can create personal accounts to manage their travel needs. |
-| BR3      | Passengers can plan their journeys efficiently, view estimated travel times, and find optimal routes using various modes of public transport. |
-| BR4      | Passengers can present their travel cards on designated readers at entry and exit points, ensuring a smooth and efficient boarding and exit process. |
-| BR5      | Passengers can have an up-to-date departures and arrivals, potential delays, and any service disruptions, get the notification about this.|
+| BR1      | Passengers must be allowed to purchase tickets for single journeys, daily passes, or monthly travelcards. |
+| BR2      | Ticket purchases must be available through self-service kiosks, mobile apps, or the official website. |
+| BR3      | Passengers must be able to create personal accounts, and to manage them. |
+| BR4      | Passengers must be able to view estimated travel times, and find optimal routes using various modes of public transport. |
+| BR5      | Passengers must validate their travel cards or tickets on designated readers at entry and exit points. |
+| BR6      | Passengers must be able to have an up-to-date public transport arrivals and departures. |
+| BR7      | Passengers must be notified about any potential delays and any service disruptions in real time.|
+| BR8      | The system must provide secure online payments through integrated payment gateways.|
 
 ## Business Use Case Diagram
