@@ -25,8 +25,29 @@ The topic of my project is **Public Transportation Ticketing System**.
 - View real-time transport information
 
 ## Business Processes
-
-
+- **Account Management**:
+  - *(Optionally)* Passenger creates an account
+  - Passenger logs in
+  - Passenger manages travel card
+  - Passenger tops up balance
+- **Ticket Purchase**:
+  - Passenger chooses where to buy a ticket
+  - Passenger selects ticket type
+  - System processes payment
+  - System issues a physical/digital ticket
+- **Travel Planning**:
+  - Passenger enters a starting point and destination
+  - System retrieves real-time transport information
+  - System calculates optimal routes
+  - System outputs journey options
+- **Ticket Validation**:
+  - Passenger taps travel card at validator 
+  - System checks validity
+  - System confirms or rejects entry
+- **Travel Information Update**:
+  - System receives real-time transport data
+  - System updates arrival/departure time
+  - Information is displayed on information screens at stations or in mobile app
 
 ## Business Rules
 
