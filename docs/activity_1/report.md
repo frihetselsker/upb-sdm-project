@@ -63,3 +63,36 @@ The topic of my project is **Public Transportation Ticketing System**.
 | BR8      | The system must provide secure online payments through integrated payment gateways.|
 
 ## Business Use Case Diagram
+
+![Business Use Case Diagram](https://www.plantuml.com/plantuml/svg/TP3DQYin38NtVWgHVS9D83ytX1382uGsxLxrA1Er7dcGvPHG-kwjYnc6GbUVZJvqq3aaGxNS1HVeOc0HbDkhGSDAtZYAS-M1qWQ2oIc_1FPmLfJKHpKuityZOsdXyPwCkWbyECY9FAPl_QY4He3Unoms0KpmTFmt4iwnd-OUJF560JngKwNv89LGzTVoif-mQYpSI7d6m0tQBsKvNX9Gu3Lc5RhNyMgyWEaTb31CZJi26mvakSJghqV-0tdY6u54umjxB4sbwct6iHezfGGztZiQAlZloW4mc-tB1xQmsx7ua1lQxyje_iVeqxdj2LCYQKctPLVlN0_Jqchbl79HkQnSLQuhD-v0qkGkV040)
+
+
+```plantuml
+@startuml
+left to right direction
+
+rectangle "Public Transport Ticketing System" {
+ usecase "Create account" as UC0
+ usecase "Top-up travel card" as UC1
+ usecase "Purchase ticket" as UC2
+
+ usecase "Validate ticket" as UC5
+ usecase "Plan journey" as UC6
+ usecase "View real-time transport info" as UC7
+ usecase "Receive notifications" as UC8
+ usecase "Process payment" as UC9
+ UC2 ..> UC9 : <<include>>
+ UC1 ..> UC9 : <<include>>
+}
+
+:Passenger: as p
+
+p - UC0
+p - UC1
+p - UC2
+p - UC5
+p - UC6
+p - UC7
+p - UC8
+@enduml
+```
