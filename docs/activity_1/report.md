@@ -64,8 +64,7 @@ The topic of my project is **Public Transportation Ticketing System**.
 
 ## Business Use Case Diagram
 
-![Business Use Case Diagram](https://www.plantuml.com/plantuml/svg/TP3DQYin38NtVWgHVS9D83ytX1382uGsxLxrA1Er7dcGvPHG-kwjYnc6GbUVZJvqq3aaGxNS1HVeOc0HbDkhGSDAtZYAS-M1qWQ2oIc_1FPmLfJKHpKuityZOsdXyPwCkWbyECY9FAPl_QY4He3Unoms0KpmTFmt4iwnd-OUJF560JngKwNv89LGzTVoif-mQYpSI7d6m0tQBsKvNX9Gu3Lc5RhNyMgyWEaTb31CZJi26mvakSJghqV-0tdY6u54umjxB4sbwct6iHezfGGztZiQAlZloW4mc-tB1xQmsx7ua1lQxyje_iVeqxdj2LCYQKctPLVlN0_Jqchbl79HkQnSLQuhD-v0qkGkV040)
-
+![Business Use Case Diagram](bucd.png)
 
 ```plantuml
 @startuml
