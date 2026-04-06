@@ -539,12 +539,12 @@ end
 
 ## 2f. Operation contracts
 ### UC3. Top-up travel card
-**Operation**: topUp(cardID, amount)
-**Cross reference**: Use Case 3. Top-up Travel Card
-**Precondition**: 1. Passenger is authenticated. A TravelCard with `cardID` is associated with the Passenger's Account. 3. Payment gateway has returned a "Success" status for the amount.
-**Postcondition**: 1. An instance `t` of Transaction was created. 2. `t.amount` becomes `amount`. 3. `t.type` becomes "Credit/Top-up". 4. `t.timestamp` becomes the current time. 5. `Account.balance` associated with the travel card was increased by `amount`. 6. `t` is associated with the account (to track history).
+- **Operation**: topUp(cardID, amount)
+- **Cross reference**: Use Case 3. Top-up Travel Card
+- **Precondition**: 1. Passenger is authenticated. A TravelCard with `cardID` is associated with the Passenger's Account. 3. Payment gateway has returned a "Success" status for the amount.
+- **Postcondition**: 1. An instance `t` of Transaction was created. 2. `t.amount` becomes `amount`. 3. `t.type` becomes "Credit/Top-up". 4. `t.timestamp` becomes the current time. 5. `Account.balance` associated with the travel card was increased by `amount`. 6. `t` is associated with the account (to track history).
 ### UC7. Validate ticket
-**Operation**: validateTicket(ticketID, deviceID)
-**Cross reference**: Use Case 7. Validate ticket
-**Precondition**: A ticket with `ticketID` exists; a validator with `deviceID` exists.
-**Postcondition**: 1. An instance v of ValidationLog was created. 2. v was associated with the Ticket and the Validator. 3. v.timestamp became the current time. 4. (If Single Trip) Ticket `status` becomes "used". 5. ValidationLog.status became "Approved" or "Rejected" based on rules.
+- **Operation**: validateTicket(ticketID, deviceID)
+- **Cross reference**: Use Case 7. Validate ticket
+- **Precondition**: A ticket with `ticketID` exists; a validator with `deviceID` exists.
+- **Postcondition**: 1. An instance v of ValidationLog was created. 2. v was associated with the Ticket and the Validator. 3. v.timestamp became the current time. 4. (If Single Trip) Ticket `status` becomes "used". 5. ValidationLog.status became "Approved" or "Rejected" based on rules.
