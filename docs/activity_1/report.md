@@ -5,7 +5,7 @@ The topic of my project is **Public Transportation Ticketing System**.
 ## Business Agents
 
 - Validation System
-- Transport Infotmation System
+- Transport Information System
 
 ## Business Actors
 
