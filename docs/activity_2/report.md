@@ -123,12 +123,11 @@ TIS -- UC8
 - **Preconditions**: User is not currently logged in and has access to the app, or website.
 - **Postconditions**: A new user record is created in the database, and user is automatically logged in or redirected to the login page.
 - **Main flow**: 
-| **Passenger**                                             | **System**                                                                 |
-| --------------------------------------------------------- | -------------------------------------------------------------------------- |
-| 1. Selects "Sign Up"                                      | 2. Allows user to enter name, email, and password for registration. |
-| 3. Enters personal details and submits the form. [A1, A2] | 4. Stores new user credentials in the passenger database.           |
-|                                                           | 5. Displays a "Registration Successful" message.                           |
-
+|**Passenger**   |**System** |
+|---|---|
+|1. Selects "Sign Up" |2. System allows user to enter name, email, and password for registration.   |
+|3. Enters personal details and submits the form. [A1, A2] | 4. System stores new user credentials in the passenger database.   |
+| - | 5. Displays a "Registration Successful" message.   |
 
 - **Alternate flows**: *A1*: if the email format is incorrect or the password is too short, System displays a validation error and asks the user to correct the fields. *A2*: if the email is already registered in the database, System informs the user and suggests logging in instead.
 - **Frequency**: Medium
