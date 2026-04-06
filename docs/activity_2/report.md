@@ -122,12 +122,13 @@ TIS -- UC8
 - **Actors**: Passenger
 - **Preconditions**: User is not currently logged in and has access to the app, or website.
 - **Postconditions**: A new user record is created in the database, and user is automatically logged in or redirected to the login page.
-- **Main flow**: 
+- **Main flow**:
+  
 |**Passenger**   |**System** |
 |---|---|
 |1. Selects "Sign Up" |2. System allows user to enter name, email, and password for registration.   |
 |3. Enters personal details and submits the form. [A1, A2] | 4. System stores new user credentials in the passenger database.   |
-| - | 5. Displays a "Registration Successful" message.   |
+|  | 5. Displays a "Registration Successful" message.   |
 
 - **Alternate flows**: *A1*: if the email format is incorrect or the password is too short, System displays a validation error and asks the user to correct the fields. *A2*: if the email is already registered in the database, System informs the user and suggests logging in instead.
 - **Frequency**: Medium
@@ -139,14 +140,15 @@ TIS -- UC8
 - **Actors**: Passenger
 - **Preconditions**: 1. User has already created an account. 2. User is not currently authenticated.
 - **Postconditions**: 1. User is granted access to personalized private features. 2. A secure session is established.
-- **Main flow**: 
+- **Main flow**:
+  
 |**Passenger**   |**System** |
 |---|---|
 |1. Navigates to the login screen.  |2. System allows users to authenticate using username (email) and password. |
-|3. Enters credentials and clicks "Login". [A1, A2]  | - |
-| - |4. System validates credentials against the database. |
-| -  |5. System starts a user session. |
-| -  |6. System redirects user to the personal dashboard. |
+|3. Enters credentials and clicks "Login". [A1, A2]  |  |
+|  |4. Validates credentials against the database. |
+|   |5. Starts a user session. |
+|   |6. Redirects user to the personal dashboard. |
 
 - **Alternate flows**: A1: if the password or email is wrong, System displays an error message for incorrect credentials and allows the user to try again. A2: If the user fails to login 5 times, the System locks the account for 15 minutes for security.
 - **Frequency**: Medium
@@ -158,17 +160,18 @@ TIS -- UC8
 - **Actors**: Passenger, (Payment Gateway???(but it's not a software actor))
 - **Preconditions**: 1. Passenger is logged in. 2. Passenger has a linked travel card.
 - **Postconditions**: 1. Travel card balance is increased by the specified amount. 2. Transaction is logged in the payment history.
-- **Main flow**: 
+- **Main flow**:
+  
 |**Passenger**   |**System** |
 |---|---|
-|1. Selects "Top-up" and enters the desired amount.  | - |
-|2. Selects payment method. [A1]  | - |
-| -  |3. Redirects to payment gateway for authorization. |
+|1. Selects "Top-up" and enters the desired amount.  |  |
+|2. Selects payment method. [A1]  |  |
+|   |3. Redirects to payment gateway for authorization. |
 |4. Enters payment details and confirms. [A1, A2]  | |
-| -  |5. Processes transaction and returns "Success" token. |
-| -  |6. Updates the balance of the linked travel card. |
-| -  |7. Records the transaction details in the history. |
-|8. Receives confirmation message and updated balance.  | - |
+|   |5. Processes transaction and returns "Success" token. |
+|   |6. Updates the balance of the linked travel card. |
+|   |7. Records the transaction details in the history. |
+|8. Receives confirmation message and updated balance.  |  |
 
 > How to handle `Process payment` better?
 
@@ -182,17 +185,18 @@ TIS -- UC8
 - **Actors**: Passenger
 - **Preconditions**: 1. Passenger is logged in (or using a kiosk).
 - **Postconditions**: 1. A new ticket (QR) is generated and stored in the user's account. 2. Transaction is logged in the payment history.
-- **Main flow**: 
+- **Main flow**:
+  
 |**Passenger**   |**System** |
 |---|---|
-|1. Selects "Buy Ticket".  | - |
-| -  |2. Displays available ticket types. |
-|3. Selects the ticket type and quantity.  | - |
-| -  |5. Initiates internal payment. |
-|6. Confirms payment process. [A1]  | - |
-| -  |7. Confirms successful transaction.|
-| -  |8. Generates a unique digital QR code for the ticket.|
-|9. Views the digital ticket.  | - |
+|1. Selects "Buy Ticket".  |  |
+|   |2. Displays available ticket types. |
+|3. Selects the ticket type and quantity.  |  |
+|   |5. Initiates internal payment. |
+|6. Confirms payment process. [A1]  |  |
+|   |7. Confirms successful transaction.|
+|   |8. Generates a unique digital QR code for the ticket.|
+|9. Views the digital ticket.  |  |
 
 - **Alternate flows**: A1: if payment fails (e.g. insufficient funds), the system provides an error and no ticket is generated.
 - **Frequency**: High
@@ -204,14 +208,15 @@ TIS -- UC8
 - **Actors**: Passenger, Transport Information System   
 - **Preconditions**: System has access to the internet to fetch real-time data from the Transport Information System.
 - **Postconditions**: System displays one or more route options with estimated travel times.
-- **Main flow**: 
+- **Main flow**:
+  
 |**Passenger**   |**Transport Information System** | **System** |
 |---|---|---|
-|1. Selects "Plan Journey"  | -   | -   |
-|2. Enters starting location and destination. [A1]  | - | -   |
-| -  |4. Sends the current data | 3. Requests current schedules and traffic data |
-|-   |-  | 5. Computes optimal routes based on time and mode preferences. |
-|6. Views the suggested routes and estimated travel times.  | - | - |
+|1. Selects "Plan Journey"  |    |    |
+|2. Enters starting location and destination. [A1]  |  |    |
+|   |4. Sends the current data | 3. Requests current schedules and traffic data |
+|   |  | 5. Computes optimal routes based on time and mode preferences. |
+|6. Views the suggested routes and estimated travel times.  |  |  |
 
 
 - **Alternate flows**: A1: if there is a problem (e.g. loss of connectivity) in Transport Information System, System sends the error message to user.
@@ -225,13 +230,14 @@ TIS -- UC8
 - **Actors**: Passenger, Transport Information System   
 - **Preconditions**: System has access to the internet to fetch real-time data from the Transport Information System.
 - **Postconditions**: Live board is displayed with up-to-the-minute data.
-- **Main flow**: 
+- **Main flow**:
+  
 |**Passenger**   |**Transport Information System** | **System** |
 |---|---|---|
-|1. Selects a specific station or bus stop on the map/list. [A1]  | -   | -   |
-| -  |3. Sends the current data | 2. Fetches arrival/departure data for that location |
-| -  | - | 5. Displays the list of upcoming vehicles and any active delays. |
-|6. Views the real-time countdown to arrival.  | - | - |
+|1. Selects a specific station or bus stop on the map/list. [A1]  |    |    |
+|   |3. Sends the current data | 2. Fetches arrival/departure data for that location |
+|   |  | 5. Displays the list of upcoming vehicles and any active delays. |
+|6. Views the real-time countdown to arrival.  |  |  |
 
 - **Alternate flows**: A1: If Transport Information System is down, System displays the scheduled (static) time with a warning that real-time tracking is currently unavailable.
 - **Frequency**: Very high
@@ -245,13 +251,14 @@ TIS -- UC8
 - **Actors**: Passenger, Validation System
 - **Preconditions**: 1. Passenger is at the entry/exit gate. 2. Passenger has an active ticket.
 - **Postconditions** 1. Access is granted/denied. 2. Entry/Exit event is logged in the system.
-- **Main flow**: 
+- **Main flow**:
+  
 |**Passenger**   |**Validation System** | **System** |
 |---|---|---|
-|1. Scans QR code on the reader.   |2. Read the QR code data and infer the ticket.   | -  |
-| - |3. Send the request on the ticket to the system | 4. Verifies if the ticket is within its validity period [A1]  |
-| -  |6. Receives the response | 5. Approves the ticket  |
-|8. Passes through the gate  |7. Shows positive signal and opens the gate at the entry point | -  |
+|1. Scans QR code on the reader.   |2. Read the QR code data and infer the ticket.   |   |
+|  |3. Send the request on the ticket to the system | 4. Verifies if the ticket is within its validity period [A1]  |
+|   |6. Receives the response | 5. Approves the ticket  |
+|8. Passes through the gate  |7. Shows positive signal and opens the gate at the entry point |   |
 
 - **Alternate flows**: A1. If the ticket is expired, the system sends a "reject" signal. The Validation System displays a red light and denies entry.
 - **Frequency**: Extremely High
@@ -264,12 +271,13 @@ TIS -- UC8
 - **Actors**: Passenger, Transport Information System   
 - **Preconditions**: Notification permissions are granted.
 - **Postconditions**: User is alerted of a specific event.
-- **Main flow**: 
+- **Main flow**:
+
 |**Passenger**   |**Transport Information System** | **System** |
 |---|---|---|
-| - | 1. Identifies a delay or disruption.   | -   |
-| -  |2. Sends the current data | 3. Pushes a notification to all affected Passengers. |
-|4. Taps the notification to see full details.  | - | - |
+|  | 1. Identifies a delay or disruption.   |    |
+|   |2. Sends the current data | 3. Pushes a notification to all affected Passengers. |
+|4. Taps the notification to see full details.  |  |  |
 
 
 - **Alternate flows**: -
@@ -285,7 +293,8 @@ TIS -- UC8
 - **Actors**: Passenger 
 - **Preconditions**: A payment-related use case has been initiated.
 - **Postconditions**: The transaction is either "Completed" or "Failed."
-- **Main flow**: 
+- **Main flow**:
+  
 |**Passenger**  | **System** |
 |---|---|
 | 1. Enters payment details [A1]  | -  |
