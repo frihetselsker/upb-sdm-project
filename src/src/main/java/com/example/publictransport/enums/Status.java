@@ -5,4 +5,5 @@ public enum Status {
     INSUFFICIENT_FUNDS,
     INVALID_TICKET,
     TIMEOUT,
+    PAYMENT_FAILED,
 }

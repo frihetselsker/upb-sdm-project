@@ -19,19 +19,19 @@ public class AuthController {
     @PostMapping("/register")
     public ResponseEntity<AuthResponse> register(@RequestBody RegisterRequest request) {
         userService.register(request);
-        String token = authService.login(request.getUsername(), request.getPassword());
+        String token = authService.login(request.getEmail(), request.getPassword());
         return ResponseEntity.ok(AuthResponse.builder()
                 .token(token)
-                .username(request.getUsername())
+                .username(request.getEmail())
                 .build());
     }
 
     @PostMapping("/login")
     public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest request) {
-        String token = authService.login(request.getUsername(), request.getPassword());
+        String token = authService.login(request.getEmail(), request.getPassword());
         return ResponseEntity.ok(AuthResponse.builder()
                 .token(token)
-                .username(request.getUsername())
+                .username(request.getEmail())
                 .build());
     }
 }

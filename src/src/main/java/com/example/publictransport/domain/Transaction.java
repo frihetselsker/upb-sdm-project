@@ -1,7 +1,5 @@
 package com.example.publictransport.domain;
 
-import com.example.publictransport.enums.Status;
-import com.example.publictransport.enums.TransactionType;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -21,14 +19,17 @@ public class Transaction {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private TransactionType type;
+    private com.example.publictransport.enums.TransactionType type;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private Status status;
+    private com.example.publictransport.enums.Status status;
 
     @Column(nullable = false)
     private LocalDateTime timestamp;
+
+    @Column(name = "gateway_transaction_id")
+    private String gatewayTransactionId;
 
     @ManyToOne
     @JoinColumn(name = "travel_card_id", nullable = false)
@@ -39,3 +40,4 @@ public class Transaction {
         timestamp = LocalDateTime.now();
     }
 }
+

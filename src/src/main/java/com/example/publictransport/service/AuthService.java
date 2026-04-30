@@ -14,15 +14,15 @@ public class AuthService {
     private final JwtService jwtService;
     private final UserService userService;
 
-    public String login(String username, String password) {
+    public String login(String email, String password) {
         Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(username, password)
+                new UsernamePasswordAuthenticationToken(email, password)
         );
 
         return jwtService.generateToken(authentication);
     }
 
-    public String getUsernameFromToken(String token) {
-        return jwtService.getUsernameFromToken(token);
-    }
+//    public String getEmailFromToken(String token) {
+//        return jwtService.getUsernameFromToken(token);
+//    }
 }

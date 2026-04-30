@@ -27,7 +27,7 @@ public class TransactionController {
 
     private Long getUserId(Authentication authentication) {
         String username = authentication.getName();
-        return userService.findByUsername(username)
+        return userService.findByEmail(username)
                 .map(com.example.publictransport.domain.User::getId)
                 .orElseThrow(() -> new IllegalArgumentException("User not found"));
     }

@@ -1,15 +1,13 @@
 package com.example.publictransport.dto.request;
 
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Data
-public class LoginRequest {
+public class ScanRequest {
     @NotBlank
-    @Email
-    private String email;
+    private String cardNumber;
 
     @NotBlank
-    private String password;
+    private String validatorCode;
 }

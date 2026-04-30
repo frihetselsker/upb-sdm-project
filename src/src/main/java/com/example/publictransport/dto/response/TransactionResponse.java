@@ -16,4 +16,5 @@ public class TransactionResponse {
     private TransactionType type;
     private Status status;
     private LocalDateTime timestamp;
+    private String gatewayTransactionId;
 }

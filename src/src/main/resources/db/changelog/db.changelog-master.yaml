@@ -14,8 +14,18 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: username
+                  name: first_name
                   type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: VARCHAR(100)
                   constraints:
                     unique: true
                     nullable: false
@@ -24,9 +34,6 @@ databaseChangeLog:
                   type: VARCHAR(255)
                   constraints:
                     nullable: false
-              - column:
-                  name: email
-                  type: VARCHAR(100)
               - column:
                   name: created_at
                   type: TIMESTAMP
@@ -159,6 +166,9 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
+                  name: gateway_transaction_id
+                  type: VARCHAR(100)
+              - column:
                   name: travel_card_id
                   type: BIGINT
                   constraints:
@@ -166,3 +176,34 @@ databaseChangeLog:
                     foreignKeyName: fk_transaction_travel_card
                     referencedTable: travel_cards
                     referencedColumn: id
+
+  - changeSet:
+      id: 005-create-validators-table
+      author: dev
+      changes:
+        - createTable:
+            tableName: validators
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: validator_id
+                  type: VARCHAR(50)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: location
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
+                  type: VARCHAR(20)
+                  constraints:
+                    nullable: false
